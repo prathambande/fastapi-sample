@@ -7,6 +7,7 @@ description = "A simple FastAPI application with hello world and calculator endp
 authors = ["Your Name <your.email@example.com>"]
 maintainers = ["Your Name <your.email@example.com>"]
 license = "MIT"
+package-mode = false
 readme = "README.md"
 homepage = "https://github.com/yourusername/fastapi-sample"
 repository = "https://github.com/yourusername/fastapi-sample"
@@ -48,5 +49,6 @@ disallow_untyped_defs = true
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
+
 
 
