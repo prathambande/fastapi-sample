@@ -8,7 +8,7 @@ name = "fastapi-sample"
 version = "0.1.0"
 description = "A simple FastAPI application with hello world and calculator endpoints"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 license = "MIT"
 authors = [
     {name = "Your Name", email = "your.email@example.com"}
@@ -17,19 +17,6 @@ maintainers = [
     {name = "Your Name", email = "your.email@example.com"}
 ]
 keywords = ["fastapi", "api", "calculator", "hello-world"]
-classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
-    "Topic :: Software Development :: Libraries :: Application Frameworks",
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-]
-
 dependencies = [
     "fastapi==0.104.1",
     "uvicorn[standard]==0.24.0",
@@ -60,12 +47,4 @@ line-length = 100
 target-version = ['py38', 'py39', 'py310', 'py311']
 include = '\.pyi?$'
 
-[tool.mypy]
-python_version = "3.8"
-warn_return_any = true
-warn_unused_configs = true
-disallow_untyped_defs = true
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-asyncio_mode = "auto"
