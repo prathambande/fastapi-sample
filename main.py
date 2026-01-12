@@ -83,23 +83,6 @@ async def uptime():
         "uptime_minutes": (uptime_duration.seconds % 3600) // 60
     }
 
-@app.get("/api/environment")
-async def environment_vars():
-    """Show relevant environment variables"""
-    interesting_vars = [
-        "WEBSITE_SITE_NAME", "WEBSITE_INSTANCE_ID", "REGION_NAME",
-        "WEBSITE_RESOURCE_GROUP", "WEBSITE_OWNER_NAME", "WEBSITE_SKU",
-        "PYTHON_VERSION", "PORT", "HOME", "HOSTNAME"
-    ]
-    
-    env_vars = {}
-    for var in interesting_vars:
-        value = os.getenv(var)
-        if value:
-            env_vars[var] = value
-    
-    return env_vars
-
 if __name__ == "__main__":
     import uvicorn
     port = int(os.getenv("PORT", 8000))

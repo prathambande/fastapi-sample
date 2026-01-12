@@ -28,7 +28,6 @@ This welcome application demonstrates:
 - `GET /api/system-info` - Detailed system and platform information
 - `GET /api/health` - Health check endpoint
 - `GET /api/uptime` - System uptime information
-- `GET /api/environment` - Environment variables
 
 ## Local Development
 
