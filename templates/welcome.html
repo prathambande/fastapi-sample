@@ -201,7 +201,6 @@
             <div style="text-align: center; margin-top: 20px;">
                 <button class="btn" onclick="loadSystemInfo()">📊 View System Info</button>
                 <button class="btn" onclick="loadUptime()">⏱️ Check Uptime</button>
-                <button class="btn" onclick="loadEnvironment()">🔧 Environment Vars</button>
             </div>
         </div>
 
@@ -235,10 +234,6 @@
                 <div class="info-item">
                     <div class="info-label">GET /api/uptime</div>
                     <div class="info-value">System uptime information</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">GET /api/environment</div>
-                    <div class="info-value">Environment variables</div>
                 </div>
             </div>
         </div>
@@ -337,30 +332,6 @@
                 container.innerHTML = html;
             } catch (error) {
                 container.innerHTML = `<div class="card"><h2>Error</h2><p>Failed to load uptime: ${error.message}</p></div>`;
-            }
-        }
-
-        async function loadEnvironment() {
-            const container = document.getElementById('dynamic-content');
-            container.innerHTML = '<div class="card"><div class="loading"><div class="spinner"></div>Loading environment variables...</div></div>';
-            
-            try {
-                const response = await fetch('/api/environment');
-                const data = await response.json();
-                
-                let html = '<div class="card"><h2>🔧 Environment Variables</h2>';
-                html += '<div class="grid">';
-                for (const [key, value] of Object.entries(data)) {
-                    html += `<div class="info-item">
-                        <div class="info-label">${key}</div>
-                        <div class="info-value">${value}</div>
-                    </div>`;
-                }
-                html += '</div></div>';
-                
-                container.innerHTML = html;
-            } catch (error) {
-                container.innerHTML = `<div class="card"><h2>Error</h2><p>Failed to load environment: ${error.message}</p></div>`;
             }
         }
 
