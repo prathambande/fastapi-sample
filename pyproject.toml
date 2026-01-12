@@ -1,50 +1,48 @@
-# Standard PEP 621 pyproject.toml (non-Poetry version)
-[build-system]
-requires = ["setuptools>=65.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "fastapi-sample"
-version = "0.1.0"
-description = "A simple FastAPI application with hello world and calculator endpoints"
+name = "sample-python-welcome"
+version = "1.0.0"
+description = "A simple Python web application for Azure Linux App Service showcase"
 readme = "README.md"
-requires-python = ">=3.10"
-license = "MIT"
+requires-python = ">=3.8"
+license = {text = "MIT"}
 authors = [
     {name = "Your Name", email = "your.email@example.com"}
 ]
-maintainers = [
-    {name = "Your Name", email = "your.email@example.com"}
+keywords = ["fastapi", "azure", "app-service", "web", "linux"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Framework :: FastAPI",
 ]
-keywords = ["fastapi", "api", "calculator", "hello-world"]
+
 dependencies = [
-    "fastapi==0.104.1",
-    "uvicorn[standard]==0.24.0",
-    "pydantic==2.5.0",
+    "fastapi==0.115.5",
+    "uvicorn[standard]==0.34.0",
+    "jinja2==3.1.4",
+    "psutil==6.1.0",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=7.4.0",
+    "pytest>=7.0.0",
     "pytest-asyncio>=0.21.0",
     "httpx>=0.24.0",
-    "black>=23.0.0",
-    "flake8>=6.0.0",
-    "mypy>=1.5.0",
 ]
 
-[project.urls]
-Homepage = "https://github.com/yourusername/fastapi-sample"
-Documentation = "https://github.com/yourusername/fastapi-sample#readme"
-Repository = "https://github.com/yourusername/fastapi-sample"
-Issues = "https://github.com/yourusername/fastapi-sample/issues"
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = [""]
 
 [project.scripts]
-fastapi-sample = "main:app"
-
-[tool.black]
-line-length = 100
-target-version = ['py38', 'py39', 'py310', 'py311']
-include = '\.pyi?$'
-
-
+start = "uvicorn main:app --host 0.0.0.0 --port 8000"
