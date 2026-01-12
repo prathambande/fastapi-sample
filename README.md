@@ -94,7 +94,7 @@ python -m uvicorn main:app --host 0.0.0.0 --port 8000
 
 ## Requirements
 
-- Python 3.8+
+- Python 3.9+
 - Dependencies managed via `pyproject.toml`
   - FastAPI
   - Uvicorn
